@@ -1,0 +1,2 @@
+zstyle ':prezto:load' pmodule 'environment' 'terminal' 'autosuggestions' 'node' 'git' 'completion' 'contrib-prompt'
+zstyle ':prezto:module:prompt' theme 'spaceship'
