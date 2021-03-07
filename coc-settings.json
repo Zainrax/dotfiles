@@ -1,0 +1,57 @@
+{
+  "tsserver.log": "verbose",
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.headwind.runOnSave": true,
+  "tailwindCSS.headwind.removeDuplicates": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "Markdown",
+    "javascript",
+    "typescript",
+    "vue",
+    "javascriptreact",
+    "typescriptreact",
+    "json",
+    "graphql"
+  ],
+  "emmet.includeLanguages": {
+    "javascript": ["javascriptreact", "typescriptreact", "vue"]
+  },
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "highlight": { "lsRanges": true },
+        "index": {
+          "onChange": true
+        },
+        "cache": {
+          "directory": "/tmp/ccls"
+        },
+        "clang": {
+          "extraArgs": [
+            "-isystem/usr/local/opt/llvm/include/c++/v1",
+            "-isystem/usr/local/include",
+            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1",
+            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include",
+            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+            "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
+            "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+          ],
+          "resourceDir": "/usr/local/opt/llvm/lib/clang/11.0.0/"
+        },
+        "client": {
+          "snippetSupport": true
+        }
+      }
+    }
+  }
+}
