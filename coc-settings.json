@@ -1,26 +1,33 @@
 {
   "tsserver.log": "verbose",
+  "typescript.format.enabled": false,
+  "javascript.format.enabled": false,
   "tailwindCSS.emmetCompletions": true,
   "tailwindCSS.headwind.runOnSave": true,
   "tailwindCSS.headwind.removeDuplicates": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "Markdown",
-    "javascript",
-    "typescript",
     "vue",
-    "javascriptreact",
-    "typescriptreact",
     "json",
     "graphql"
   ],
   "emmet.includeLanguages": {
-    "javascript": ["javascriptreact", "typescriptreact", "vue"]
+    "javascript": [
+      "javascriptreact",
+      "typescriptreact",
+      "vue"
+    ]
   },
   "languageserver": {
     "ccls": {
       "command": "ccls",
-      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "filetypes": [
+        "c",
+        "cpp",
+        "objc",
+        "objcpp"
+      ],
       "rootPatterns": [
         ".ccls",
         "compile_commands.json",
@@ -29,7 +36,9 @@
         ".hg/"
       ],
       "initializationOptions": {
-        "highlight": { "lsRanges": true },
+        "highlight": {
+          "lsRanges": true
+        },
         "index": {
           "onChange": true
         },

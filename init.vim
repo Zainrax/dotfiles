@@ -131,6 +131,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
   nmap <silent> ga  <Plug>(coc-codeaction)
   " Apply AutoFix to problem on the current line.
   nmap <silent> gf  <Plug>(coc-fix-current)
+
+  " For finding eslint in workspace
+  autocmd FileType typescript let b:coc_root_patterns = [ 'package.json']
+  autocmd FileType javascript let b:coc_root_patterns = [ 'package.json']
 " }}}
 Plug 'easymotion/vim-easymotion'
   " {{{
