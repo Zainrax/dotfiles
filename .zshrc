@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z zsh-autosuggestions zsh-syntax-highlighting tmux)
+plugins=(git z zsh-autosuggestions zsh-syntax-highlighting tmux volta)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,12 +109,7 @@ ZSH_TMUX_AUTOSTART=true
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export VOLTA_HOME="$HOME/.volta"
 export TURSO="/home/abra/.turso"
-export CUDA_HOME="/opt/cuda"
-export PYENV_ROOT="$HOME/.pyenv"
-export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
-export PATH="$CUDA_HOME/bin:$PYENV_ROOT:$TURSO:$VOLTA_HOME/bin:$PATH"
 export SUDO_EDITOR="nvim"
 export BROWSER="/usr/bin/microsoft-edge-stable"
 export ANDROID_HOME="/home/abra/Android/Sdk"
@@ -127,12 +122,6 @@ export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
 # Aliases
 alias x="exa"
 alias "sudoedit"='function _sudoedit(){sudo -e "$1";};_sudoedit'
-
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
 # pnpm
 export PNPM_HOME="/home/abra/.local/share/pnpm"
 case ":$PATH:" in
@@ -140,3 +129,11 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+if [ "$TMUX" = "" ]; then tmux; fi
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
